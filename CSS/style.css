@@ -1,0 +1,99 @@
+body{
+    background-color: #D6C4BB;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 500px;
+    margin: 0;
+}
+
+.container{
+   position: relative;
+   text-align: center;
+   background-color: white;
+   padding: 40px 30px 80px;
+   border-radius: 30px;
+   width: min(750px, 90%);
+}
+
+h3{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+}
+
+button{
+    height: 50px;
+    width: 75px;
+    border-radius: 30px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+#yes_button{
+    background-color: #EC5A7E;
+    outline: none;
+    margin-right: 100px;
+}
+
+#no_button{
+  position: absolute;
+  transition: 0.2s ease; /* smooth, normal movement */
+}
+
+
+
+p{
+    margin-top: 100px;
+}
+
+/* Full-screen confetti container */
+.confetti {
+  position: fixed;
+  width: 8px;
+  height: 8px;
+  top: 50%;
+  left: 50%;
+  pointer-events: none;
+  animation: confettiPop 1.2s ease-out forwards;
+}
+
+
+
+
+@keyframes confettiPop {
+  0%   { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { 
+    transform: translate(var(--x), var(--y)) scale(0.5); 
+    opacity: 0; 
+  }
+}
+
+#message {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+
+  display: none;
+  align-items: center;
+  justify-content: center;
+
+  background: rgba(255, 255, 255, 0.9);
+  font-family: 'Courier New', monospace;
+  font-weight: bold;
+  font-size: clamp(2rem, 8vw, 6rem);
+  text-align: center;
+  z-index: 999;
+
+  animation: heartbeat 1.2s ease-in-out infinite;
+}
+
+@keyframes heartbeat {
+  0%   { transform: scale(1); }
+  25%  { transform: scale(1.05); }
+  40%  { transform: scale(1); }
+  60%  { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
